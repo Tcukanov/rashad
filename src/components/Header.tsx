@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { site } from "@/lib/site";
+import SocialIcons from "./SocialIcons";
 
 const links = [
   { href: "/#about", label: "Студия" },
@@ -33,7 +34,7 @@ export default function Header() {
         <div className="wrap header__in">
           <Link href="/" className="logo" aria-label="Элмио Дизайн, на главную" onClick={() => setOpen(false)}>
             <b>элмио.</b>
-            <small>elmio design · дизайн и ремонт</small>
+            <small>дизайн и ремонт</small>
           </Link>
           <nav className="nav" aria-label="Основное меню">
             {links.map((l) => (
@@ -41,6 +42,7 @@ export default function Header() {
             ))}
           </nav>
           <div className="header__cta">
+            <SocialIcons className="header__socials" />
             <a className="header__phone" href={site.phoneHref}>{site.phone}</a>
             <Link className="btn" href="/#contact">Обсудить проект</Link>
             <button
@@ -59,6 +61,7 @@ export default function Header() {
           <Link key={l.href} href={l.href} onClick={() => setOpen(false)} tabIndex={open ? 0 : -1}>{l.label}</Link>
         ))}
         <a href={site.phoneHref} className="muted" style={{ fontSize: 20 }} tabIndex={open ? 0 : -1}>{site.phone}</a>
+        <SocialIcons className="socials--lg" tabIndex={open ? 0 : -1} />
         <Link className="btn btn--solid" href="/#contact" onClick={() => setOpen(false)} tabIndex={open ? 0 : -1}>Обсудить проект</Link>
       </div>
     </>

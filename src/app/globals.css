@@ -98,6 +98,13 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 .nav a::after { content: ""; position: absolute; left: 0; bottom: 0; height: 1px; width: 0; background: var(--brass); transition: width 0.4s var(--ease); }
 .nav a:hover::after { width: 100%; }
 .header__cta { display: flex; align-items: center; gap: 24px; }
+.socials { list-style: none; display: flex; align-items: center; gap: 14px; }
+.socials a { display: grid; place-items: center; width: 32px; height: 32px; border-radius: 50%; color: var(--linen); opacity: 0.7; transition: opacity 0.3s, background 0.3s; }
+.socials a:hover { opacity: 1; background: rgba(255, 255, 255, 0.08); }
+.socials--lg { gap: 18px; margin-top: 8px; }
+.socials--lg svg { width: 24px; height: 24px; }
+.header__socials { gap: 4px; }
+@media (max-width: 1200px) { .header__socials { display: none; } }
 .header__phone { font-size: 14px; letter-spacing: -0.01em; }
 .burger { display: none; width: 44px; height: 44px; position: relative; }
 .burger span { position: absolute; left: 10px; right: 10px; height: 1px; background: var(--linen); transition: transform 0.4s var(--ease), top 0.4s var(--ease); }
@@ -107,7 +114,7 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 .mobile-menu {
   position: fixed; inset: 84px 0 0 0; background: var(--espresso); z-index: 49;
   display: flex; flex-direction: column; padding: 40px var(--pad); gap: 22px;
-  font-family: var(--serif); font-size: 34px;
+  font-family: var(--serif); font-size: 34px; font-weight: 500; letter-spacing: -0.05em; text-transform: lowercase;
   transform: translateY(-8px); opacity: 0; pointer-events: none; transition: opacity 0.4s, transform 0.4s var(--ease);
 }
 .mobile-menu.is-open { opacity: 1; transform: none; pointer-events: auto; }

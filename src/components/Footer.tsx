@@ -11,7 +11,7 @@ export default function Footer() {
           <div>
             <Link href="/" className="logo" aria-label="Элмио Дизайн">
               <b>элмио.</b>
-              <small>elmio design · дизайн и ремонт</small>
+              <small>дизайн и ремонт</small>
             </Link>
             <p className="muted" style={{ marginTop: 20, maxWidth: 300 }}>
               Элмио Дизайн: студия дизайна интерьера и ремонта под ключ. {site.city}.
