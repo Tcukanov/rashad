@@ -20,10 +20,10 @@ export default function Footer() {
           <div>
             <h4>Навигация</h4>
             <ul>
-              <li><Link href="/#services">Услуги</Link></li>
-              <li><Link href="/#projects">Проекты</Link></li>
-              <li><Link href="/#process">Этапы работы</Link></li>
-              <li><Link href="/#contact">Контакты</Link></li>
+              <li><Link href="/studio">Студия</Link></li>
+              <li><Link href="/services">Услуги</Link></li>
+              <li><Link href="/projects">Проекты</Link></li>
+              <li><Link href="/contacts">Контакты</Link></li>
             </ul>
           </div>
           <div>

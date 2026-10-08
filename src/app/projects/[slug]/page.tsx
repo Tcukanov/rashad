@@ -27,7 +27,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
   return (
     <>
       <section className="wrap phero">
-        <Link href="/#projects" className="phero__back">← Все проекты</Link>
+        <Link href="/projects" className="phero__back">← Все проекты</Link>
         <h1 className="h-display">{p.title}</h1>
         <p className="phero__lead">{p.lead}</p>
         <div className="phero__meta">
@@ -43,7 +43,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
             <span className="eyebrow">Следующий проект</span>
             <Link href={`/projects/${next.slug}`} className="pnext__t">{next.title} →</Link>
           </div>
-          <Link href="/#contact" className="btn btn--solid">Хочу похожий интерьер <span className="arr">→</span></Link>
+          <Link href="/contacts" className="btn btn--solid">Хочу похожий интерьер <span className="arr">→</span></Link>
         </div>
       </div>
     </>
