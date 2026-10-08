@@ -20,7 +20,6 @@ export const site = {
     vk: "https://vk.ru/elmiodesigncom",
     youtube: "https://youtube.com/@elmiodesign",
     dzen: "https://dzen.ru/elmiodesign",
-    instagram: "https://www.instagram.com/elmiodesign",
   },
 
   // Оператор персональных данных и исполнитель услуг
@@ -38,6 +37,3 @@ export const site = {
 
   metrikaId: process.env.NEXT_PUBLIC_YM_ID ?? "",
 } as const;
-
-export const META_NOTE =
-  "Instagram принадлежит компании Meta Platforms Inc., деятельность которой признана экстремистской и запрещена на территории Российской Федерации.";

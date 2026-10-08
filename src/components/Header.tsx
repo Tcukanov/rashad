@@ -32,8 +32,8 @@ export default function Header() {
       <header className={`header ${solid || open ? "is-solid" : ""}`}>
         <div className="wrap header__in">
           <Link href="/" className="logo" aria-label="Элмио Дизайн, на главную" onClick={() => setOpen(false)}>
-            <b>ЭЛМИО</b>
-            <small>ELMIO DESIGN · дизайн и ремонт</small>
+            <b>элмио.</b>
+            <small>elmio design · дизайн и ремонт</small>
           </Link>
           <nav className="nav" aria-label="Основное меню">
             {links.map((l) => (

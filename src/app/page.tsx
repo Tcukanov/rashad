@@ -57,7 +57,7 @@ export default function Home() {
     <>
       {/* HERO */}
       <section className="hero">
-        <span className="hero__mark" aria-hidden>ЭЛМИО</span>
+        <span className="hero__mark" aria-hidden>элмио.</span>
         <div className="wrap hero__grid">
           <div className="hero__text">
             <span className="eyebrow">Студия дизайна и ремонта · {site.city}</span>

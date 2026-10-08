@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { META_NOTE, site } from "@/lib/site";
+import { site } from "@/lib/site";
 import CookieSettingsLink from "./CookieSettingsLink";
 
 export default function Footer() {
@@ -10,8 +10,8 @@ export default function Footer() {
         <div className="footer__grid">
           <div>
             <Link href="/" className="logo" aria-label="Элмио Дизайн">
-              <b>ЭЛМИО</b>
-              <small>ELMIO DESIGN · дизайн и ремонт</small>
+              <b>элмио.</b>
+              <small>elmio design · дизайн и ремонт</small>
             </Link>
             <p className="muted" style={{ marginTop: 20, maxWidth: 300 }}>
               Элмио Дизайн: студия дизайна интерьера и ремонта под ключ. {site.city}.
@@ -33,7 +33,6 @@ export default function Footer() {
               <li><a href={socials.vk} target="_blank" rel="noopener noreferrer">ВКонтакте</a></li>
               <li><a href={socials.youtube} target="_blank" rel="noopener noreferrer">Ютуб</a></li>
               <li><a href={socials.dzen} target="_blank" rel="noopener noreferrer">Дзен</a></li>
-              <li><a href={socials.instagram} target="_blank" rel="noopener noreferrer">Instagram*</a></li>
             </ul>
           </div>
           <div>
@@ -53,7 +52,7 @@ export default function Footer() {
           </div>
         </div>
         <p className="footnote">
-          * {META_NOTE} Информация на сайте носит справочный характер и не является публичной офертой
+          Информация на сайте носит справочный характер и не является публичной офертой
           (ст. 437 ГК РФ). Стоимость и сроки определяются договором.
         </p>
         <div className="footer__bottom">
@@ -65,7 +64,7 @@ export default function Footer() {
             <CookieSettingsLink />
           </nav>
         </div>
-        <div className="big-word" aria-hidden>ЭЛМИО ДИЗАЙН</div>
+        <div className="big-word" aria-hidden>элмио дизайн</div>
       </div>
     </footer>
   );

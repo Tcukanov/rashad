@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Onest, Prata } from "next/font/google";
+import { Manrope } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -8,8 +8,9 @@ import { site } from "@/lib/site";
 
 // next/font скачивает шрифты при сборке и раздаёт их с нашего домена:
 // браузер посетителя не обращается к серверам Google.
-const prata = Prata({ weight: "400", subsets: ["latin", "cyrillic"], variable: "--font-prata", display: "swap" });
-const onest = Onest({ subsets: ["latin", "cyrillic"], variable: "--font-onest", display: "swap" });
+// Референс (inkbureau.ru) использует Gilroy — шрифт платный. Manrope — близкий бесплатный аналог с кириллицей.
+// Если студия купит лицензию Gilroy: положить woff2 в src/fonts и заменить на next/font/local с той же переменной --font-main.
+const main = Manrope({ subsets: ["latin", "cyrillic"], weight: ["400", "500", "600"], variable: "--font-main", display: "swap" });
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
@@ -27,11 +28,11 @@ export const metadata: Metadata = {
   },
 };
 
-export const viewport: Viewport = { themeColor: "#15100c" };
+export const viewport: Viewport = { themeColor: "#121212" };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="ru" className={`${prata.variable} ${onest.variable}`}>
+    <html lang="ru" className={main.variable}>
       <body>
         <Header />
         <main>{children}</main>
