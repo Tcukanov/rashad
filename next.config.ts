@@ -1,9 +1,9 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
-  cacheComponents: true,
-  partialPrefetching: true,
+  // Сборка для собственного сервера в РФ (Timeweb Cloud, Selectel, Yandex Cloud и т. п.)
+  output: "standalone",
+  poweredByHeader: false,
 };
 
 export default nextConfig;
