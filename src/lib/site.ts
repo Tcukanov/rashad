@@ -16,9 +16,7 @@ export const site = {
   email: "hello@elmiodesign.com",
 
   socials: {
-    telegram: "https://t.me/elmiodesign", // TODO: проверить ссылку на канал
     vk: "https://vk.ru/elmiodesigncom",
-    youtube: "https://youtube.com/@elmiodesign",
     dzen: "https://dzen.ru/elmiodesign",
   },
 

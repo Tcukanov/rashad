@@ -29,9 +29,7 @@ export default function Footer() {
           <div>
             <h4>Мы в сетях</h4>
             <ul>
-              <li><a href={socials.telegram} target="_blank" rel="noopener noreferrer">Телеграм</a></li>
               <li><a href={socials.vk} target="_blank" rel="noopener noreferrer">ВКонтакте</a></li>
-              <li><a href={socials.youtube} target="_blank" rel="noopener noreferrer">Ютуб</a></li>
               <li><a href={socials.dzen} target="_blank" rel="noopener noreferrer">Дзен</a></li>
             </ul>
           </div>
