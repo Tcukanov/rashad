@@ -8,7 +8,7 @@ import { projects } from "@/lib/projects";
 
 export const metadata: Metadata = {
   title: "Проекты",
-  description: "Портфолио студии Элмио Дизайн: дизайн-проекты квартир в жилых комплексах Москвы.",
+  description: "Портфолио «Дизайн и Ремонт студия»: дизайн-проекты квартир в жилых комплексах Москвы.",
 };
 
 export default function ProjectsPage() {

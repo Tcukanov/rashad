@@ -15,15 +15,15 @@ const main = Manrope({ subsets: ["latin", "cyrillic"], weight: ["400", "500", "6
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
-    default: "Элмио Дизайн (ELMIO DESIGN): дизайн интерьера и ремонт под ключ в Москве",
-    template: "%s | Элмио Дизайн",
+    default: "Дизайн и Ремонт студия: дизайн интерьера и ремонт под ключ в Москве",
+    template: "%s | Дизайн и Ремонт студия",
   },
   description:
     "Студия дизайна интерьера и ремонта. Дизайн-проект, ремонт под ключ, комплектация и авторский надзор квартир в Москве.",
   openGraph: {
     type: "website",
     locale: "ru_RU",
-    siteName: "Элмио Дизайн",
+    siteName: "Дизайн и Ремонт студия",
     images: ["/works/serdce-stolicy-2/18.jpg"],
   },
 };

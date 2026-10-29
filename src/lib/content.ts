@@ -40,6 +40,7 @@ export const principles = [
 ];
 
 export const nav = [
+  { href: "/", label: "Главная" },
   { href: "/studio", label: "Студия" },
   { href: "/services", label: "Услуги" },
   { href: "/projects", label: "Проекты" },

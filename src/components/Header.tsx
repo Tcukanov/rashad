@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
@@ -13,7 +14,7 @@ export default function Header() {
   const [solid, setSolid] = useState(false);
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
-  const isActive = (href: string) => pathname === href || pathname.startsWith(href + "/");
+  const isActive = (href: string) => pathname === href || (href !== "/" && pathname.startsWith(href + "/"));
 
   useEffect(() => {
     const onScroll = () => setSolid(window.scrollY > 40);
@@ -30,9 +31,12 @@ export default function Header() {
     <>
       <header className={`header ${solid || open ? "is-solid" : ""}`}>
         <div className="wrap header__in">
-          <Link href="/" className="logo" aria-label="Элмио Дизайн, на главную" onClick={() => setOpen(false)}>
-            <b>элмио.</b>
-            <small>дизайн и ремонт</small>
+          <Link href="/" className="logo" aria-label="Дизайн и ремонт МСК, на главную" onClick={() => setOpen(false)}>
+            <Image className="logo__mark" src="/logo-mark.webp" alt="" width={240} height={231} priority />
+            <span className="logo__text">
+              <b>Дизайн и ремонт МСК</b>
+              <small>Студия интерьера и ремонта</small>
+            </span>
           </Link>
           <nav className="nav" aria-label="Основное меню">
             {links.map((l) => (

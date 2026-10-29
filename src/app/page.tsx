@@ -14,7 +14,7 @@ export default function Home() {
   return (
     <>
       <section className="hero">
-        <span className="hero__mark" aria-hidden>элмио.</span>
+        <span className="hero__mark" aria-hidden>дизайн и ремонт.</span>
         <div className="wrap hero__grid">
           <div className="hero__text">
             <span className="eyebrow">Студия дизайна и ремонта · {site.city}</span>

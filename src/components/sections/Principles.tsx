@@ -8,7 +8,7 @@ export default function Principles() {
         <Reveal className="section__head">
           <div>
             <span className="eyebrow">Принципы</span>
-            <h2 className="h-section">Почему <em>Элмио</em></h2>
+            <h2 className="h-section">Почему <em>мы</em></h2>
           </div>
           <p>Мы берём немного проектов одновременно, чтобы каждому уделить внимание дизайнера.</p>
         </Reveal>

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { site } from "@/lib/site";
 import CookieSettingsLink from "./CookieSettingsLink";
@@ -9,12 +10,15 @@ export default function Footer() {
       <div className="wrap">
         <div className="footer__grid">
           <div>
-            <Link href="/" className="logo" aria-label="Элмио Дизайн">
-              <b>элмио.</b>
-              <small>дизайн и ремонт</small>
+            <Link href="/" className="logo" aria-label="Дизайн и ремонт МСК">
+              <Image className="logo__mark" src="/logo-mark.webp" alt="" width={240} height={231} />
+              <span className="logo__text">
+                <b>Дизайн и ремонт МСК</b>
+                <small>Студия интерьера и ремонта</small>
+              </span>
             </Link>
             <p className="muted" style={{ marginTop: 20, maxWidth: 300 }}>
-              Элмио Дизайн: студия дизайна интерьера и ремонта под ключ. {site.city}.
+              Дизайн и Ремонт студия: дизайн интерьера и ремонт под ключ. {site.city}.
             </p>
           </div>
           <div>
@@ -54,7 +58,7 @@ export default function Footer() {
           (ст. 437 ГК РФ). Стоимость и сроки определяются договором.
         </p>
         <div className="footer__bottom">
-          <span>© {new Date().getFullYear()} Элмио Дизайн. Все права защищены.</span>
+          <span>© {new Date().getFullYear()} Дизайн и Ремонт студия. Все права защищены.</span>
           <nav aria-label="Правовая информация">
             <Link href="/privacy">Политика обработки персональных данных</Link>
             <Link href="/consent">Согласие на обработку ПДн</Link>
@@ -62,7 +66,7 @@ export default function Footer() {
             <CookieSettingsLink />
           </nav>
         </div>
-        <div className="big-word" aria-hidden>элмио дизайн</div>
+        <div className="big-word" aria-hidden>дизайн и ремонт студия</div>
       </div>
     </footer>
   );

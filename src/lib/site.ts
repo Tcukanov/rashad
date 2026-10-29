@@ -2,8 +2,8 @@
 // Значения с пометкой TODO нужно уточнить у студии до запуска сайта.
 
 export const site = {
-  name: "ELMIO DESIGN",
-  nameRu: "Элмио Дизайн",
+  name: "Дизайн и Ремонт студия",
+  nameRu: "Дизайн и Ремонт студия",
   tagline: "Студия дизайна интерьера и ремонта",
   url: "https://elmiodesign.com",
   city: "Москва",
