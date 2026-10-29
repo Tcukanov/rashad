@@ -230,7 +230,7 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 }
 .pindex__row:hover { padding-left: 18px; color: var(--brass); }
 .pindex__n { font-family: var(--serif); color: var(--stone); font-size: 15px; }
-.pindex__t { font-family: var(--serif); font-weight: 500; letter-spacing: -0.05em; text-transform: lowercase; font-size: clamp(26px, 3.8vw, 52px); line-height: 1.1; }
+.pindex__t { font-family: var(--serif); font-weight: 500; letter-spacing: -0.05em; text-transform: none; font-size: clamp(26px, 3.8vw, 52px); line-height: 1.1; }
 .pindex__rooms { font-size: 12px; letter-spacing: -0.01em; text-transform: lowercase; color: var(--stone); text-align: right; max-width: 340px; }
 .pindex__arr { font-size: 22px; transition: transform 0.4s var(--ease); }
 .pindex__row:hover .pindex__arr { transform: translateX(6px) rotate(-45deg); }
@@ -366,7 +366,7 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 .lightbox__close { position: absolute; top: 16px; right: 20px; font-size: 12px; letter-spacing: -0.01em; text-transform: lowercase; color: var(--sand); padding: 12px; }
 .lightbox__count { position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); font-size: 12px; letter-spacing: -0.01em; color: var(--stone); }
 .pnext { border-top: 1px solid var(--line); padding: 80px 0 100px; display: flex; justify-content: space-between; align-items: end; gap: 24px; flex-wrap: wrap; }
-.pnext a.pnext__t { font-family: var(--serif); font-weight: 500; letter-spacing: -0.05em; text-transform: lowercase; font-size: clamp(30px, 5vw, 72px); line-height: 1.05; display: block; margin-top: 12px; }
+.pnext a.pnext__t { font-family: var(--serif); font-weight: 500; letter-spacing: -0.05em; text-transform: none; font-size: clamp(30px, 5vw, 72px); line-height: 1.05; display: block; margin-top: 12px; }
 .pnext a.pnext__t:hover { color: var(--brass); }
 
 /* legal pages */
@@ -401,3 +401,6 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 .cta-band { background: var(--walnut); border-top: 0; }
 .cta-band__in p { color: #626A60; }
 .hero__img img, .mosaic img, .gallery img { filter: saturate(0.92); }
+
+/* названия ЖК пишутся как есть: «ЖК», «II», латиница */
+.as-is { text-transform: none; }

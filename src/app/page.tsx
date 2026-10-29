@@ -37,7 +37,7 @@ export default function Home() {
             <div className="hero__img">
               <Image src={hero.cover.src} alt={`Гостиная, ${hero.title}`} width={hero.cover.w} height={hero.cover.h} priority sizes="(max-width: 900px) 100vw, 45vw" />
             </div>
-            <span className="hero__caption">{hero.title}</span>
+            <span className="hero__caption as-is">{hero.title}</span>
           </div>
         </div>
       </section>

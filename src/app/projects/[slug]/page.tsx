@@ -28,7 +28,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
     <>
       <section className="wrap phero">
         <Link href="/projects" className="phero__back">← Все проекты</Link>
-        <h1 className="h-display">{p.title}</h1>
+        <h1 className="h-display as-is">{p.title}</h1>
         <p className="phero__lead">{p.lead}</p>
         <div className="phero__meta">
           <span>Дизайн-проект</span>

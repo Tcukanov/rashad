@@ -31,7 +31,7 @@ export default function ProjectsPage() {
           {mosaic.map((m) => (
             <Link key={m.src} href={`/projects/${m.pr.slug}`}>
               <Image src={m.src} alt={m.pr.title} width={m.w} height={m.h} sizes="(max-width: 700px) 100vw, 50vw" />
-              <span className="mosaic__cap">{m.pr.title}</span>
+              <span className="mosaic__cap as-is">{m.pr.title}</span>
             </Link>
           ))}
         </div>
