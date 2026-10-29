@@ -12,6 +12,9 @@ export const site = {
 
   phone: "+7 (926) 417-24-22",
   phoneHref: "tel:+79264172422",
+  phone2: "+7 (913) 001-83-93",
+  phone2Href: "tel:+79130018393",
+  phone2Name: "Олеся",
   // TODO: реальная почта студии (на российском сервисе: Яндекс 360 / Mail.ru)
   email: "hello@elmiodesign.com",
 

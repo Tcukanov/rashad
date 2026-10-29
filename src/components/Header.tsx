@@ -63,6 +63,7 @@ export default function Header() {
           <Link key={l.href} href={l.href} onClick={() => setOpen(false)} tabIndex={open ? 0 : -1}>{l.label}</Link>
         ))}
         <a href={site.phoneHref} className="muted" style={{ fontSize: 20 }} tabIndex={open ? 0 : -1}>{site.phone}</a>
+        <a href={site.phone2Href} className="muted as-is" style={{ fontSize: 20 }} tabIndex={open ? 0 : -1}>{site.phone2Name} · {site.phone2}</a>
         <SocialIcons className="socials--lg" tabIndex={open ? 0 : -1} />
         <Link className="btn btn--solid" href="/contacts" onClick={() => setOpen(false)} tabIndex={open ? 0 : -1}>Обсудить проект</Link>
       </div>
