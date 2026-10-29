@@ -13,7 +13,7 @@ export default function Team() {
           <p>Дизайнеры, архитекторы и прорабы, которые ведут ваш проект от замера до расстановки декора.</p>
         </Reveal>
         <Reveal className="team">
-          <Image src="/team.jpg" alt="Наша команда" width={1600} height={1431} sizes="(max-width: 900px) 100vw, 1100px" />
+          <Image src="/team.jpg" alt="Наша команда" width={1800} height={1620} sizes="(max-width: 900px) 100vw, 1100px" />
         </Reveal>
       </div>
     </section>
