@@ -36,5 +36,5 @@ export const site = {
     privacyEmail: "hello@elmiodesign.com", // TODO: адрес для запросов субъектов ПДн
   },
 
-  metrikaId: process.env.NEXT_PUBLIC_YM_ID ?? "",
+  metrikaId: process.env.NEXT_PUBLIC_YM_ID ?? "113936779",
 } as const;

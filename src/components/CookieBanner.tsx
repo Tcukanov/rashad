@@ -1,8 +1,9 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import Script from "next/script";
-import { useState, useSyncExternalStore } from "react";
+import { useEffect, useRef, useState, useSyncExternalStore } from "react";
 
 const KEY = "elmio-cookie-consent"; // "all" | "necessary"
 
@@ -50,9 +51,21 @@ export default function CookieBanner({ metrikaId }: { metrikaId: string }) {
   };
 
   const effective = choice === "pending" ? null : choice ?? accepted;
+
+  // Переходы внутри сайта идут без перезагрузки — сообщаем Метрике о каждой новой странице.
+  // Первый просмотр Метрика засчитывает сама при init.
+  const pathname = usePathname();
+  const lastPath = useRef<string | null>(null);
+  useEffect(() => {
+    const prev = lastPath.current;
+    lastPath.current = pathname;
+    if (prev === null || prev === pathname || !metrikaId) return;
+    const ym = (window as unknown as { ym?: (...a: unknown[]) => void }).ym;
+    ym?.(Number(metrikaId), "hit", window.location.href, { referer: window.location.origin + prev });
+  }, [pathname, metrikaId]);
   const metrika =
     (effective === "all" || choice === "all") && metrikaId ? (
-      <Script id="ym" strategy="afterInteractive">{`
+      <Script id="ym-init" strategy="afterInteractive">{`
         (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
         m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
         (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
