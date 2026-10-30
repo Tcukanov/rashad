@@ -6,12 +6,14 @@ import { site } from "@/lib/site";
 // Заявка с сайта.
 // 1) Сначала записывается в файл на нашем сервере (сервер должен стоять в РФ — ч. 5 ст. 18 152-ФЗ).
 // 2) Затем отправляется письмом через SMTP российского почтового сервиса (Яндекс 360 / Mail.ru).
-// Никаких иностранных сервисов (Telegram-боты, Gmail, Google Sheets) в цепочке нет.
+// TODO: временно письма уходят на Gmail (SMTP_* и LEADS_TO в настройках Vercel) — заменить на Яндекс 360.
+// На Vercel файловая система только для чтения, кроме /tmp, и /tmp не сохраняется между запусками,
+// поэтому там заявка считается принятой, если ушло письмо.
 
 export const runtime = "nodejs";
 
 const CONSENT_VERSION = "consent-2026-10-08";
-const DATA_DIR = process.env.LEADS_DIR ?? path.join(process.cwd(), "data");
+const DATA_DIR = process.env.LEADS_DIR ?? (process.env.VERCEL ? "/tmp/leads" : path.join(process.cwd(), "data"));
 
 const hits = new Map<string, number[]>();
 function limited(ip: string) {
@@ -58,13 +60,16 @@ export async function POST(req: Request) {
     consent: { given: true, version: CONSENT_VERSION, ip, userAgent: clean(req.headers.get("user-agent"), 300) },
   };
 
+  let saved = false;
   try {
     await mkdir(DATA_DIR, { recursive: true });
     await appendFile(path.join(DATA_DIR, "leads.jsonl"), JSON.stringify(lead) + "\n", "utf8");
+    saved = true;
   } catch (e) {
     console.error("lead: не удалось сохранить заявку", e);
-    return Response.json({ error: "Не удалось отправить заявку. Позвоните нам, пожалуйста." }, { status: 500 });
   }
+
+  let mailed = false;
 
   const { SMTP_HOST, SMTP_PORT, SMTP_USER, SMTP_PASS, LEADS_TO } = process.env;
   if (SMTP_HOST && SMTP_USER && SMTP_PASS) {
@@ -89,11 +94,15 @@ export async function POST(req: Request) {
           `Согласие на обработку ПДн: да (${CONSENT_VERSION}), ${lead.at}, IP ${ip}`,
         ].join("\n"),
       });
+      mailed = true;
     } catch (e) {
-      // заявка уже сохранена — письмо можно переотправить вручную
+      // если заявка сохранена в файл, письмо можно переотправить вручную
       console.error("lead: письмо не отправлено", e);
     }
   }
 
+  if (!saved && !mailed) {
+    return Response.json({ error: "Не удалось отправить заявку. Позвоните нам, пожалуйста." }, { status: 500 });
+  }
   return Response.json({ ok: true });
 }
