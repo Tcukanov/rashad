@@ -2,11 +2,11 @@ import Image from "next/image";
 import Link from "next/link";
 import ProjectIndex from "@/components/ProjectIndex";
 import Reveal from "@/components/Reveal";
-import About from "@/components/sections/About";
 import CtaBand from "@/components/sections/CtaBand";
 import DzenGrid from "@/components/sections/DzenGrid";
 import Location from "@/components/sections/Location";
 import Services from "@/components/sections/Services";
+import Team from "@/components/sections/Team";
 import { projects } from "@/lib/projects";
 import { site } from "@/lib/site";
 
@@ -54,9 +54,9 @@ export default function Home() {
         </div>
       </div>
 
-      <About>
+      <Team compact>
         <div className="more"><Link href="/studio" className="btn">О студии <span className="arr">→</span></Link></div>
-      </About>
+      </Team>
 
       <Services>
         <div className="more"><Link href="/services" className="btn">Услуги и этапы работы <span className="arr">→</span></Link></div>

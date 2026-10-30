@@ -180,6 +180,7 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 /* team */
 .team { max-width: 1100px; margin: 0 auto; }
 .team img { width: 100%; height: auto; display: block; }
+.team--compact { max-width: 640px; margin: 0; }
 
 /* about */
 .about { display: grid; grid-template-columns: 0.85fr 1.15fr; gap: clamp(32px, 6vw, 110px); align-items: center; }

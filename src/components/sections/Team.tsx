@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Reveal from "@/components/Reveal";
 
-export default function Team() {
+export default function Team({ children, compact = false }: { children?: React.ReactNode; compact?: boolean }) {
   return (
     <section className="section">
       <div className="wrap">
@@ -12,9 +12,10 @@ export default function Team() {
           </div>
           <p>Дизайнеры, архитекторы и прорабы, которые ведут ваш проект от замера до расстановки декора.</p>
         </Reveal>
-        <Reveal className="team">
-          <Image src="/team.jpg" alt="Наша команда" width={1800} height={1620} sizes="(max-width: 900px) 100vw, 1100px" />
+        <Reveal className={`team ${compact ? "team--compact" : ""}`}>
+          <Image src="/team.jpg" alt="Наша команда" width={1800} height={1620} sizes={compact ? "(max-width: 900px) 100vw, 640px" : "(max-width: 900px) 100vw, 1100px"} />
         </Reveal>
+        {children}
       </div>
     </section>
   );
