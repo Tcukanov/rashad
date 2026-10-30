@@ -35,6 +35,14 @@ function subscribe(cb: () => void) {
   };
 }
 
+// Согласие на все cookie: по нему сразу грузятся виджеты Яндекса (карта, отзывы).
+export function useConsentAll() {
+  const all = () => {
+    try { return localStorage.getItem(KEY) === "all"; } catch { return false; }
+  };
+  return useSyncExternalStore(subscribe, all, () => false);
+}
+
 // Яндекс Метрика подключается ТОЛЬКО после согласия на аналитические cookie.
 export default function CookieBanner({ metrikaId }: { metrikaId: string }) {
   // "pending" на сервере: баннер не рендерится до гидрации

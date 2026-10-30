@@ -21,7 +21,7 @@ export default function Contact({ asPage = false }: { asPage?: boolean }) {
             <a href={site.phoneHref}>{site.phone}</a>
             <a href={site.phone2Href}>{site.phone2Name} · {site.phone2}</a>
             <a href={`mailto:${site.email}`}>{site.email}</a>
-            <span className="muted">{site.city} · {site.hours}</span>
+            <span className="muted">{site.address} · {site.hours}</span>
             <SocialIcons className="socials--lg" />
           </div>
         </Wrap>

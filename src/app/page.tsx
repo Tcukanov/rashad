@@ -5,6 +5,7 @@ import Reveal from "@/components/Reveal";
 import About from "@/components/sections/About";
 import CtaBand from "@/components/sections/CtaBand";
 import DzenGrid from "@/components/sections/DzenGrid";
+import Location from "@/components/sections/Location";
 import Services from "@/components/sections/Services";
 import { projects } from "@/lib/projects";
 import { site } from "@/lib/site";
@@ -76,6 +77,8 @@ export default function Home() {
       </section>
 
       <DzenGrid />
+
+      <Location />
 
       <CtaBand />
     </>

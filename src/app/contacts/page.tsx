@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Contact from "@/components/sections/Contact";
+import Location from "@/components/sections/Location";
 
 export const metadata: Metadata = {
   title: "Контакты",
@@ -7,5 +8,10 @@ export const metadata: Metadata = {
 };
 
 export default function ContactsPage() {
-  return <Contact asPage />;
+  return (
+    <>
+      <Contact asPage />
+      <Location />
+    </>
+  );
 }
