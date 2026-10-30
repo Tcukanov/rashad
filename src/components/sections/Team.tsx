@@ -1,7 +1,42 @@
 import Image from "next/image";
 import Reveal from "@/components/Reveal";
+import { projects } from "@/lib/projects";
+
+const photo = { src: "/team.jpg", width: 1800, height: 1620 };
 
 export default function Team({ children, compact = false }: { children?: React.ReactNode; compact?: boolean }) {
+  if (compact) {
+    return (
+      <section className="section">
+        <div className="wrap team-split">
+          <Reveal>
+            <Image {...photo} alt="Наша команда" sizes="(max-width: 900px) 100vw, 50vw" />
+          </Reveal>
+          <Reveal delay={120}>
+            <span className="eyebrow">Команда</span>
+            <h2 className="h-section">Наша <em>команда</em></h2>
+            <div className="about__body">
+              <p>
+                Мы создаём интерьеры в спокойной природной гамме и сами доводим их до реального ремонта,
+                поэтому квартира выглядит так же, как на визуализации.
+              </p>
+              <p>
+                Ведём проект от первого замера до расстановки декора: один договор, одна команда,
+                понятные сроки и бюджет.
+              </p>
+            </div>
+            <div className="facts">
+              <div><b>{projects.length}</b><span>проектов в портфолио</span></div>
+              <div><b>4</b><span>услуги под ключ</span></div>
+              <div><b>5</b><span>этапов работы</span></div>
+            </div>
+            {children}
+          </Reveal>
+        </div>
+      </section>
+    );
+  }
+
   return (
     <section className="section">
       <div className="wrap">
@@ -12,8 +47,8 @@ export default function Team({ children, compact = false }: { children?: React.R
           </div>
           <p>Люди, которые ведут ваш проект от первого замера до расстановки декора.</p>
         </Reveal>
-        <Reveal className={`team ${compact ? "team--compact" : ""}`}>
-          <Image src="/team.jpg" alt="Наша команда" width={1800} height={1620} sizes={compact ? "(max-width: 900px) 100vw, 640px" : "(max-width: 900px) 100vw, 1100px"} />
+        <Reveal className="team">
+          <Image {...photo} alt="Наша команда" sizes="(max-width: 900px) 100vw, 1100px" />
         </Reveal>
         {children}
       </div>

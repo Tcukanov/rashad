@@ -180,7 +180,10 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 /* team */
 .team { max-width: 1100px; margin: 0 auto; }
 .team img { width: 100%; height: auto; display: block; }
-.team--compact { max-width: 640px; margin: 0; }
+.team-split { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(32px, 6vw, 96px); align-items: center; }
+.team-split img { width: 100%; height: auto; display: block; }
+.team-split .h-section { margin: 24px 0 28px; }
+@media (max-width: 900px) { .team-split { grid-template-columns: 1fr; } }
 
 /* about */
 .about { display: grid; grid-template-columns: 0.85fr 1.15fr; gap: clamp(32px, 6vw, 110px); align-items: center; }
