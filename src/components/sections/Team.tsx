@@ -10,7 +10,7 @@ export default function Team({ children, compact = false }: { children?: React.R
             <span className="eyebrow">Команда</span>
             <h2 className="h-section">Наша <em>команда</em></h2>
           </div>
-          <p>Дизайнеры, архитекторы и прорабы, которые ведут ваш проект от замера до расстановки декора.</p>
+          <p>Люди, которые ведут ваш проект от первого замера до расстановки декора.</p>
         </Reveal>
         <Reveal className={`team ${compact ? "team--compact" : ""}`}>
           <Image src="/team.jpg" alt="Наша команда" width={1800} height={1620} sizes={compact ? "(max-width: 900px) 100vw, 640px" : "(max-width: 900px) 100vw, 1100px"} />
