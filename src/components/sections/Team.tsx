@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Reveal from "@/components/Reveal";
-import { projects } from "@/lib/projects";
 
 const photo = { src: "/team.jpg", width: 1800, height: 1620 };
 
@@ -26,8 +25,8 @@ export default function Team({ children, compact = false }: { children?: React.R
               </p>
             </div>
             <div className="facts">
-              <div><b>{projects.length}</b><span>проектов в портфолио</span></div>
-              <div><b>4</b><span>услуги под ключ</span></div>
+              <div><b>10+</b><span>лет на рынке</span></div>
+              <div><b>110+</b><span>проектов</span></div>
               <div><b>5</b><span>этапов работы</span></div>
             </div>
             {children}

@@ -32,8 +32,8 @@ export default function About({ children }: { children?: React.ReactNode }) {
             </p>
           </div>
           <div className="facts">
-            <div><b>{projects.length}</b><span>проектов в портфолио</span></div>
-            <div><b>4</b><span>услуги под ключ</span></div>
+            <div><b>10+</b><span>лет на рынке</span></div>
+            <div><b>110+</b><span>проектов</span></div>
             <div><b>5</b><span>этапов работы</span></div>
           </div>
           {children}
