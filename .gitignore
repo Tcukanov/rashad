@@ -42,3 +42,5 @@ next-env.d.ts
 
 # заявки с персональными данными
 /data
+/out
+site.zip

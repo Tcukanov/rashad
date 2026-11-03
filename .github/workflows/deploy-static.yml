@@ -1,0 +1,39 @@
+# Статическая сборка → ветка deploy. Сервер Majordomo забирает её сам (cron, hosting/_deploy/pull.sh).
+name: Static build for Majordomo
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: deploy-static
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npx next build
+        env:
+          STATIC_EXPORT: "1"
+          NEXT_PUBLIC_LEAD_ENDPOINT: /api/lead.php
+      - run: |
+          cp -R hosting/. out/
+          echo "$GITHUB_SHA" > out/VERSION
+      - uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: deploy
+          publish_dir: ./out
+          force_orphan: true
+          enable_jekyll: true
