@@ -11,8 +11,6 @@ import { projects } from "@/lib/projects";
 import { site } from "@/lib/site";
 
 export default function Home() {
-  const hero = projects[0];
-
   return (
     <>
       <section className="hero">
@@ -37,9 +35,8 @@ export default function Home() {
           <div className="hero__media">
             <div className="hero__frame" aria-hidden />
             <div className="hero__img">
-              <Image src={hero.cover.src} alt={`Гостиная, ${hero.title}`} width={hero.cover.w} height={hero.cover.h} priority sizes="(max-width: 900px) 100vw, 45vw" />
+              <Image src="/hero.jpg" alt="Гостиная с кухней-столовой" width={1603} height={2000} priority sizes="(max-width: 900px) 100vw, 45vw" />
             </div>
-            <span className="hero__caption as-is">{hero.title}</span>
           </div>
         </div>
       </section>
