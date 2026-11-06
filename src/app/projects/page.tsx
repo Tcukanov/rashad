@@ -7,7 +7,7 @@ import PageHead from "@/components/sections/PageHead";
 import { projects } from "@/lib/projects";
 
 export const metadata: Metadata = {
-  title: "Проекты",
+  title: "Дизайн-проекты квартир в Москве: портфолио",
   description: "Портфолио «Дизайн и Ремонт студия»: дизайн-проекты квартир в жилых комплексах Москвы.",
 };
 
@@ -22,6 +22,7 @@ export default function ProjectsPage() {
     <>
       <PageHead
         eyebrow="Портфолио"
+        h1="Портфолио: дизайн-проекты квартир в Москве"
         title={<>Наши <em>проекты</em></>}
         lead="Квартиры в московских жилых комплексах. Откройте проект, чтобы увидеть все визуализации."
       />

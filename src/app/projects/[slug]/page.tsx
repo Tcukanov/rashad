@@ -14,7 +14,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const { slug } = await params;
   const p = getProject(slug);
   if (!p) return {};
-  return { title: p.title, description: p.lead, openGraph: { images: [p.cover.src] } };
+  return { title: `Дизайн интерьера квартиры в ${p.title}`, description: p.lead, openGraph: { images: [p.cover.src] } };
 }
 
 export default async function ProjectPage({ params }: { params: Promise<{ slug: string }> }) {

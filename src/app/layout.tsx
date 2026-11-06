@@ -4,6 +4,7 @@ import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import CookieBanner from "@/components/CookieBanner";
+import OrgSchema from "@/components/OrgSchema";
 import { site } from "@/lib/site";
 
 // next/font скачивает шрифты при сборке и раздаёт их с нашего домена:
@@ -15,11 +16,15 @@ const main = Manrope({ subsets: ["latin", "cyrillic"], weight: ["400", "500", "6
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
-    default: "Дизайн и Ремонт студия: дизайн интерьера и ремонт под ключ в Москве",
+    default: "Дизайн интерьера и ремонт квартир под ключ в Москве | Дизайн и Ремонт студия",
     template: "%s | Дизайн и Ремонт студия",
   },
   description:
-    "Студия дизайна интерьера и ремонта. Дизайн-проект, ремонт под ключ, комплектация и авторский надзор квартир в Москве.",
+    "Дизайн интерьера и ремонт квартир под ключ в Москве: дизайн-проект с 3D-визуализацией, ремонт, комплектация и авторский надзор. Офис на Огородном проезде.",
+  // каждая страница ссылается на свой адрес на основном домене
+  alternates: { canonical: "./" },
+  // копия на *.vercel.app не должна попадать в поиск
+  robots: process.env.VERCEL ? { index: false, follow: false } : undefined,
   openGraph: {
     type: "website",
     locale: "ru_RU",
@@ -38,6 +43,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <main>{children}</main>
         <Footer />
         <CookieBanner metrikaId={site.metrikaId} />
+        <OrgSchema />
       </body>
     </html>
   );

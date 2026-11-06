@@ -4,14 +4,14 @@ import SocialIcons from "@/components/SocialIcons";
 import { site } from "@/lib/site";
 
 export default function Contact({ asPage = false }: { asPage?: boolean }) {
-  const Title = asPage ? "h1" : "h2";
+  const Title = asPage ? "p" : "h2";
   // на отдельной странице блок виден сразу, без анимации появления
   const Wrap = asPage ? Plain : Reveal;
   return (
     <section className={`section ${asPage ? "section--page" : "section--umber"}`}>
       <div className="wrap lead">
         <Wrap className="lead__aside">
-          <span className="eyebrow">{asPage ? "Контакты" : "Заявка"}</span>
+          {asPage ? <h1 className="eyebrow">Контакты студии дизайна и ремонта в Москве</h1> : <span className="eyebrow">Заявка</span>}
           <Title className={asPage ? "h-display" : "h-section"}>Расскажите о <em>вашем доме</em></Title>
           <p>
             Оставьте контакты: перезвоним, зададим пару вопросов и назовём ориентировочную стоимость

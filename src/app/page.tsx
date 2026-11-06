@@ -17,12 +17,12 @@ export default function Home() {
         <span className="hero__mark" aria-hidden>дизайн и ремонт.</span>
         <div className="wrap hero__grid">
           <div className="hero__text">
-            <span className="eyebrow">Студия дизайна и ремонта · {site.city}</span>
-            <h1 className="h-display hero__title">
+            <h1 className="eyebrow">Дизайн интерьера и ремонт квартир под ключ в Москве</h1>
+            <p className="h-display hero__title">
               <span><i>Интерьеры,</i></span>
               <span><i>в которых</i></span>
               <span><i><em>тихо и тепло</em></i></span>
-            </h1>
+            </p>
             <p className="hero__lead">
               Проектируем и ремонтируем квартиры под ключ. Дерево, камень, свет и ничего лишнего:
               дом, в который хочется возвращаться.

@@ -3,8 +3,13 @@ DirectoryIndex index.html index.php
 ErrorDocument 404 /404.html
 Options -Indexes
 
-# http → https
 RewriteEngine On
+
+# www → без www: у сайта должен быть один адрес, иначе поисковик видит дубли
+RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
+
+# http → https
 RewriteCond %{HTTPS} off
 RewriteCond %{HTTP:X-Forwarded-Proto} !https
 RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]

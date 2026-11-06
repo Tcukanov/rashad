@@ -354,7 +354,7 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 .phero { padding-top: 160px; padding-bottom: 64px; }
 .phero__back { font-size: 12px; letter-spacing: -0.01em; text-transform: lowercase; color: var(--stone); }
 .phero__back:hover { color: var(--brass); }
-.phero h1 { margin: 28px 0 24px; }
+.phero .h-display { margin: 28px 0 24px; }
 .phero__lead { color: var(--sand); max-width: 620px; font-size: 18px; }
 .phero__meta { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 28px; }
 .phero__meta span { border: 1px solid var(--line); padding: 8px 14px; font-size: 12px; letter-spacing: -0.01em; text-transform: lowercase; color: var(--sand); }

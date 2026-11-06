@@ -3,7 +3,7 @@ import Contact from "@/components/sections/Contact";
 import Location from "@/components/sections/Location";
 
 export const metadata: Metadata = {
-  title: "Контакты",
+  title: "Контакты студии дизайна интерьера в Москве",
   description: "Свяжитесь с «Дизайн и Ремонт студия»: телефон, соцсети и форма заявки на расчёт проекта.",
 };
 
