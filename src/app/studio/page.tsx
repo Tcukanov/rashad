@@ -7,8 +7,8 @@ import Process from "@/components/sections/Process";
 import Team from "@/components/sections/Team";
 
 export const metadata: Metadata = {
-  title: "О студии дизайна интерьера и ремонта в Москве",
-  description: "«Дизайн и Ремонт студия» — авторская студия дизайна интерьера и ремонта в Москве: подход, принципы и этапы работы.",
+  title: "Студия дизайна интерьера в Москве: дизайнер и команда ремонта",
+  description: "«Дизайн и Ремонт студия» — дизайнер интерьера и команда ремонта в Москве: подход, принципы, этапы работы и наша команда.",
 };
 
 export default function StudioPage() {

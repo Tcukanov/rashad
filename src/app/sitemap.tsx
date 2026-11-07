@@ -13,6 +13,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ["/", 1],
     ["/services", 0.9],
     ["/services/design", 0.9],
+    ["/services/renovation", 0.9],
+    ["/services/novostroyka", 0.8],
     ["/projects", 0.9],
     ["/studio", 0.7],
     ["/contacts", 0.8],
