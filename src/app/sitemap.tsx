@@ -12,6 +12,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const pages: [string, number][] = [
     ["/", 1],
     ["/services", 0.9],
+    ["/services/design", 0.9],
     ["/projects", 0.9],
     ["/studio", 0.7],
     ["/contacts", 0.8],

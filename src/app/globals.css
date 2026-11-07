@@ -213,6 +213,9 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 .service p { color: var(--sand); font-size: 15px; }
 .service ul { list-style: none; display: grid; gap: 8px; font-size: 14px; color: var(--stone); margin-top: auto; padding-top: 12px; }
 .service li::before { content: "— "; color: var(--brass); }
+.service .service__price { color: var(--brass); font-size: 17px; font-weight: 500; letter-spacing: -0.02em; }
+.service__more { font-size: 13px; color: var(--stone); text-transform: lowercase; }
+.service__more:hover { color: var(--brass); }
 @media (max-width: 1080px) {
   .services { grid-template-columns: 1fr 1fr; }
   .service:nth-child(2) { border-right: 0; }
@@ -434,6 +437,17 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   .location__reviews .yembed { height: 560px; }
   .location__map .yembed { height: 380px; }
 }
+
+/* price */
+.price-split { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(32px, 6vw, 96px); align-items: start; }
+.price-split .h-section { margin: 24px 0 28px; }
+.price-list { list-style: none; display: grid; gap: 14px; font-size: 17px; }
+.price-list li { padding-bottom: 14px; border-bottom: 1px solid var(--line); }
+.price-list li::before { content: "— "; color: var(--brass); }
+.price-table { width: 100%; border-collapse: collapse; font-size: 17px; margin-bottom: 16px; }
+.price-table td { padding: 14px 0; border-bottom: 1px solid var(--line); }
+.price-table td:last-child { text-align: right; font-weight: 500; }
+@media (max-width: 900px) { .price-split { grid-template-columns: 1fr; } }
 
 /* названия ЖК пишутся как есть: «ЖК», «II», латиница */
 .as-is { text-transform: none; }
