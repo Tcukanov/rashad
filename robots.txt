@@ -1,0 +1,6 @@
+User-Agent: *
+Allow: /
+Disallow: /consent/
+Disallow: /api/
+
+Sitemap: https://xn--80ahegecg0agdkv4a.xn--p1ai/sitemap.xml
