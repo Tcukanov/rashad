@@ -1,4 +1,5 @@
 import type { MetadataRoute } from "next";
+import { flats } from "@/lib/flats";
 import { projects } from "@/lib/projects";
 import { site } from "@/lib/site";
 
@@ -15,6 +16,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ["/services/design", 0.9],
     ["/services/renovation", 0.9],
     ["/services/novostroyka", 0.8],
+    ...flats.map((f): [string, number] => [`/services/design/${f.slug}`, 0.8]),
+    ["/services/nadzor", 0.7],
+    ["/services/komplektaciya", 0.7],
     ["/projects", 0.9],
     ["/studio", 0.7],
     ["/contacts", 0.8],

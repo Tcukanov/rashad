@@ -29,6 +29,8 @@ export default function Footer() {
               <li><Link href="/services/design">Дизайн-проект</Link></li>
               <li><Link href="/services/renovation">Ремонт под ключ</Link></li>
               <li><Link href="/services/novostroyka">Ремонт в новостройке</Link></li>
+              <li><Link href="/services/komplektaciya">Комплектация</Link></li>
+              <li><Link href="/services/nadzor">Авторский надзор</Link></li>
               <li><Link href="/projects">Проекты</Link></li>
               <li><Link href="/contacts">Контакты</Link></li>
             </ul>

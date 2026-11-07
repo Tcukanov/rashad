@@ -21,3 +21,12 @@ export function serviceSchema(name: string, serviceType: string, pricePerM2?: nu
 }
 
 export const designServiceSchema = () => serviceSchema("Дизайн-проект квартиры", "Дизайн интерьера", designPricePerM2);
+
+// Хлебные крошки: Яндекс показывает их в сниппете вместо адреса.
+export function breadcrumbSchema(items: [string, string][]) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: items.map(([name, path], i) => ({ "@type": "ListItem", position: i + 1, name, item: new URL(path, site.url).href })),
+  };
+}

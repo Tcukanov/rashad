@@ -21,12 +21,12 @@ export const metadata: Metadata = {
 // Примеры: цена за м² умноженная на типичную площадь квартиры, без допущений.
 const examples = (
   [
-    ["Однокомнатная", 40],
-    ["Двухкомнатная", 60],
-    ["Трёхкомнатная", 80],
-    ["Четырёхкомнатная", 120],
+    ["Однокомнатная", 40, "/services/design/1-komnatnaya"],
+    ["Двухкомнатная", 60, "/services/design/2-komnatnaya"],
+    ["Трёхкомнатная", 80, "/services/design/3-komnatnaya"],
+    ["Четырёхкомнатная", 120, null],
   ] as const
-).map(([kind, m2]) => ({ kind, m2, total: (m2 * designPricePerM2).toLocaleString("ru-RU") }));
+).map(([kind, m2, href]) => ({ kind, m2, href, total: (m2 * designPricePerM2).toLocaleString("ru-RU") }));
 
 export default function DesignPage() {
   return (
@@ -54,7 +54,7 @@ export default function DesignPage() {
             <table className="price-table">
               <tbody>
                 {examples.map((e) => (
-                  <tr key={e.m2}><td>{e.kind} квартира, {e.m2} м²</td><td>от {e.total} ₽</td></tr>
+                  <tr key={e.m2}><td>{e.href ? <Link href={e.href} className="link">{e.kind} квартира, {e.m2} м²</Link> : <>{e.kind} квартира, {e.m2} м²</>}</td><td>от {e.total} ₽</td></tr>
                 ))}
               </tbody>
             </table>
