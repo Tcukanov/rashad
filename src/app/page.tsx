@@ -8,7 +8,6 @@ import Location from "@/components/sections/Location";
 import Services from "@/components/sections/Services";
 import Team from "@/components/sections/Team";
 import { projects } from "@/lib/projects";
-import { site } from "@/lib/site";
 
 export default function Home() {
   return (
@@ -35,7 +34,7 @@ export default function Home() {
           <div className="hero__media">
             <div className="hero__frame" aria-hidden />
             <div className="hero__img">
-              <Image src="/hero.jpg" alt="Гостиная с кухней-столовой" width={1603} height={2000} priority sizes="(max-width: 900px) 100vw, 45vw" />
+              <Image src="/hero.webp" alt="Гостиная с кухней-столовой" width={1603} height={2000} priority sizes="(max-width: 900px) 100vw, 45vw" />
             </div>
           </div>
         </div>

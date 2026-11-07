@@ -11,7 +11,7 @@ export default function About({ children }: { children?: React.ReactNode }) {
         <Reveal className="about__media">
           <Image src={p.cover.src} alt={`Интерьер, ${p.title}`} width={p.cover.w} height={p.cover.h} sizes="(max-width: 900px) 80vw, 38vw" />
           <div className="about__small">
-            <Image src="/works/foriver/30.jpg" alt="Деталь интерьера: смеситель и раковина" width={1024} height={1280} sizes="20vw" />
+            <Image src="/works/foriver/30.webp" alt="Деталь интерьера: смеситель и раковина" width={1024} height={1280} sizes="20vw" />
           </div>
         </Reveal>
         <Reveal delay={120}>

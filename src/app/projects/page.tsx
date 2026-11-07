@@ -13,10 +13,10 @@ export const metadata: Metadata = {
 
 export default function ProjectsPage() {
   const mosaic = [
-    { pr: projects[4], src: "/works/foriver-2/31.jpg", w: 1036, h: 1280 },
-    { pr: projects[2], src: "/works/dream-towers/07.jpg", w: 1280, h: 937 },
-    { pr: projects[3], src: "/works/arhitektor/19.jpg", w: 1024, h: 1280 },
-    { pr: projects[6], src: "/works/beregovoy/12.jpg", w: 951, h: 1280 },
+    { pr: projects[4], src: "/works/foriver-2/31.webp", w: 1036, h: 1280 },
+    { pr: projects[2], src: "/works/dream-towers/07.webp", w: 1280, h: 937 },
+    { pr: projects[3], src: "/works/arhitektor/19.webp", w: 1024, h: 1280 },
+    { pr: projects[6], src: "/works/beregovoy/12.webp", w: 951, h: 1280 },
   ];
   return (
     <>

@@ -4,6 +4,10 @@ import Image from "next/image";
 import { useCallback, useEffect, useState } from "react";
 import type { Photo } from "@/lib/projects";
 
+// «Кухня-гостиная в ЖК «Foriver»: дизайн интерьера, визуализация 7» — по таким подписям фото находятся в Яндекс Картинках.
+const altFor = (p: Photo, title: string, i: number) =>
+  p.room ? `${p.room} в ${title}: дизайн интерьера, визуализация ${i + 1}` : `${title}, визуализация ${i + 1}`;
+
 export default function Gallery({ photos, title }: { photos: Photo[]; title: string }) {
   const [idx, setIdx] = useState<number | null>(null);
   const n = photos.length;
@@ -31,7 +35,7 @@ export default function Gallery({ photos, title }: { photos: Photo[]; title: str
           <button key={p.src} onClick={() => setIdx(i)} aria-label={`Открыть фото ${i + 1} из ${n}`}>
             <Image
               src={p.src}
-              alt={`${title}, визуализация ${i + 1}`}
+              alt={altFor(photos[i], title, i)}
               width={p.w}
               height={p.h}
               sizes="(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 33vw"
@@ -44,7 +48,7 @@ export default function Gallery({ photos, title }: { photos: Photo[]; title: str
         <div className="lightbox" role="dialog" aria-modal="true" aria-label={title} onClick={() => setIdx(null)}>
           <Image
             src={photos[idx].src}
-            alt={`${title}, визуализация ${idx + 1}`}
+            alt={altFor(photos[idx], title, idx)}
             width={photos[idx].w}
             height={photos[idx].h}
             sizes="92vw"

@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Reveal from "@/components/Reveal";
 
-const photo = { src: "/team.jpg", width: 1800, height: 1620 };
+const photo = { src: "/team.webp", width: 1800, height: 1620 };
 
 export default function Team({ children, compact = false }: { children?: React.ReactNode; compact?: boolean }) {
   if (compact) {

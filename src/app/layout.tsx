@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     type: "website",
     locale: "ru_RU",
     siteName: "Дизайн и Ремонт студия",
-    images: ["/works/serdce-stolicy-2/18.jpg"],
+    images: ["/hero.jpg"],
   },
 };
 
