@@ -19,8 +19,9 @@ export const site = {
   phone2: "+7 (913) 001-83-93",
   phone2Href: "tel:+79130018393",
   phone2Name: "Олеся",
-  // TODO: реальная почта студии (на российском сервисе: Яндекс 360 / Mail.ru)
-  email: "hello@elmiodesign.com",
+  // Почта студии на Majordomo. В ссылках mailto — punycode: так её понимают все почтовые программы.
+  email: "info@дизайниремонт.рф",
+  emailHref: "mailto:info@xn--80ahegecg0agdkv4a.xn--p1ai",
 
   socials: {
     vk: "https://vk.ru/elmiodesigncom",
@@ -37,7 +38,7 @@ export const site = {
     // Юридический адрес ИП — это адрес регистрации. Публиковать квартиру не обязательно;
     // для сайта достаточно города или адреса офиса/шоурума, если он есть.
     address: "г. Москва",
-    privacyEmail: "hello@elmiodesign.com", // TODO: адрес для запросов субъектов ПДн
+    privacyEmail: "info@дизайниремонт.рф",
   },
 
   metrikaId: process.env.NEXT_PUBLIC_YM_ID ?? "113936779",

@@ -3,8 +3,8 @@
 // 1) Записывается в файл на сервере в РФ, вне папки сайта (ч. 5 ст. 18 152-ФЗ).
 // 2) Отправляется письмом через mail() хостинга.
 
-// TODO: почта, куда приходят заявки
-const LEADS_TO = '';
+// Почта, куда приходят заявки: info@дизайниремонт.рф (ящик на Majordomo). Домен в punycode — так его понимает mail().
+const LEADS_TO = 'info@xn--80ahegecg0agdkv4a.xn--p1ai';
 const CONSENT_VERSION = 'consent-2026-10-08';
 
 header('Content-Type: application/json; charset=utf-8');
@@ -77,7 +77,7 @@ if (LEADS_TO !== '') {
     'Согласие на обработку ПДн: да (' . CONSENT_VERSION . "), {$lead['at']}, IP $ip",
   ]);
   $subject = '=?UTF-8?B?' . base64_encode('Новая заявка: ' . ($lead['service'] ?: 'консультация')) . '?=';
-  $headers = "From: noreply@$host\r\nContent-Type: text/plain; charset=utf-8\r\nContent-Transfer-Encoding: 8bit";
+  $headers = "From: " . LEADS_TO . "\r\nContent-Type: text/plain; charset=utf-8\r\nContent-Transfer-Encoding: 8bit";
   $mailed = @mail(LEADS_TO, $subject, $text, $headers);
 }
 

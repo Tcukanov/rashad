@@ -42,7 +42,7 @@ export default function Footer() {
             <ul style={{ marginBottom: 18 }}>
               <li><a href={site.phoneHref}>{site.phone}</a></li>
               <li><a href={site.phone2Href}>{site.phone2Name} · {site.phone2}</a></li>
-              <li><a href={`mailto:${site.email}`}>{site.email}</a></li>
+              <li><a href={site.emailHref}>{site.email}</a></li>
             </ul>
             <div className="footer__req">
               <span>{legal.entity}</span>

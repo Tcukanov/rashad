@@ -18,7 +18,7 @@ export default function Privacy() {
       <p>
         Оператор: {legal.entity}, ИНН {legal.inn}
         {legal.ogrnip ? `, ОГРНИП ${legal.ogrnip}` : ""}, адрес: {legal.address}. Контакт для обращений по вопросам
-        персональных данных: <a href={`mailto:${legal.privacyEmail}`}>{legal.privacyEmail}</a>.
+        персональных данных: <a href={site.emailHref}>{legal.privacyEmail}</a>.
       </p>
 
       <h2>2. Какие данные мы обрабатываем и зачем</h2>
@@ -70,7 +70,7 @@ export default function Privacy() {
       <p>
         Вы вправе получить сведения об обработке своих данных, потребовать их уточнения, блокирования
         или уничтожения, отозвать согласие и обжаловать действия оператора в Роскомнадзоре или в суде
-        (ст. 14, 17 152-ФЗ). Запрос направляется на <a href={`mailto:${legal.privacyEmail}`}>{legal.privacyEmail}</a>{" "}
+        (ст. 14, 17 152-ФЗ). Запрос направляется на <a href={site.emailHref}>{legal.privacyEmail}</a>{" "}
         или почтой по адресу оператора. Ответ — в течение 10 рабочих дней.
       </p>
       <p>

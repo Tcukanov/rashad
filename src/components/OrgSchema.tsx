@@ -1,7 +1,7 @@
 import { site } from "@/lib/site";
 
 // Разметка schema.org: Яндекс и Google связывают сайт с организацией, адресом и карточкой на Картах.
-// Почту и часы работы не указываем, пока в site.ts стоят заглушки.
+// Часы работы не указываем, пока в site.ts стоит заглушка.
 export default function OrgSchema() {
   const data = {
     "@context": "https://schema.org",
@@ -13,6 +13,7 @@ export default function OrgSchema() {
     logo: new URL("/icon.png", site.url).href,
     image: new URL("/hero.jpg", site.url).href,
     telephone: site.phoneHref.replace("tel:", ""),
+    email: site.emailHref.replace("mailto:", ""),
     address: {
       "@type": "PostalAddress",
       streetAddress: site.address.replace(/^Москва,\s*/, ""),
